@@ -1,0 +1,1041 @@
+/* =========================
+   RESET & VARIABLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --teal: #62cfc7;
+    --teal-dark: #3baea6;
+    --teal-light: #d9f5f2;
+
+    --pink: #f3a6c4;
+    --pink-dark: #df82aa;
+    --pink-light: #ffe5ef;
+
+    --background: #fff1f6;
+    --white: #ffffff;
+
+    --dark: #4b5961;
+    --gray: #71808a;
+
+    --border: #f5c4d7;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: var(--background);
+
+    color: var(--dark);
+
+    line-height: 1.6;
+
+    transition:
+        background 0.3s,
+        color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background: var(--white);
+
+    box-shadow:
+        0 2px 12px rgba(75, 89, 97, 0.08);
+
+    position: fixed;
+
+    width: 100%;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: var(--teal-dark);
+}
+
+.nav-links {
+    display: flex;
+
+    list-style: none;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: var(--dark);
+
+    font-weight: 500;
+
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-btn {
+    border: none;
+
+    background: var(--pink-light);
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s,
+        background 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+
+    background: var(--teal-light);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 150px 0 100px;
+
+    background: var(--teal-light);
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.welcome {
+    color: var(--teal-dark);
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+
+    margin-bottom: 20px;
+
+    color: var(--dark);
+}
+
+.hero-content span {
+    color: var(--pink-dark);
+}
+
+.hero-description {
+    font-size: 20px;
+
+    color: var(--gray);
+
+    margin-bottom: 30px;
+
+    max-width: 650px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    background: var(--pink);
+
+    color: white;
+
+    padding: 12px 30px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s,
+        background 0.3s,
+        box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    background: var(--pink-dark);
+
+    box-shadow:
+        0 8px 18px rgba(223, 130, 170, 0.25);
+}
+
+.secondary-btn {
+    background: var(--teal);
+}
+
+.secondary-btn:hover {
+    background: var(--teal-dark);
+}
+
+
+/* =========================
+   HOBBIES PREVIEW
+========================= */
+
+.hobbies-preview {
+    padding: 80px 0;
+
+    background: var(--background);
+}
+
+.hobbies-preview h2 {
+    text-align: center;
+
+    font-size: 36px;
+
+    color: var(--teal-dark);
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+
+    color: var(--gray);
+
+    margin-bottom: 40px;
+}
+
+.hobby-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.hobby-card {
+    background: var(--white);
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(243, 166, 196, 0.25);
+}
+
+.hobby-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.hobby-card h3 {
+    color: var(--teal-dark);
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.hobby-card p {
+    color: var(--gray);
+}
+
+.center-button {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+    padding: 140px 0 70px;
+
+    min-height: 100vh;
+
+    background: var(--background);
+}
+
+.section-heading {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    color: var(--dark);
+}
+
+.section-heading span {
+    color: var(--pink-dark);
+}
+
+.about-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+}
+
+.about-image {
+    flex: 1;
+
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+
+    max-width: 380px;
+
+    height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border:
+        6px solid var(--pink-light);
+
+    box-shadow:
+        0 10px 25px rgba(243, 166, 196, 0.2);
+}
+
+.about-image h3 {
+    margin-top: 15px;
+
+    font-size: 24px;
+
+    color: var(--teal-dark);
+}
+
+.about-content {
+    flex: 1.5;
+}
+
+.about-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: var(--teal-dark);
+}
+
+.about-content p {
+    color: var(--gray);
+
+    margin-bottom: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.info-container {
+    background: var(--teal-light);
+
+    padding: 50px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.info-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: var(--white);
+
+    border:
+        2px solid var(--pink-light);
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(98, 207, 199, 0.18);
+}
+
+.info-icon {
+    font-size: 35px;
+}
+
+.info-text h3 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+
+    color: var(--teal-dark);
+}
+
+.info-text span {
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   HOBBIES DETAIL
+========================= */
+
+.hobby-detail {
+    max-width: 1000px;
+
+    margin: 60px auto 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(243, 166, 196, 0.12);
+}
+
+.hobby-detail-image {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.hobby-detail-image img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 18px rgba(98, 207, 199, 0.15);
+}
+
+.hobby-detail-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.hobby-detail-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+    color: var(--teal-dark);
+}
+
+.hobby-detail-content p {
+    color: var(--gray);
+
+    margin-bottom: 15px;
+}
+
+.gaming-section {
+    margin-top: 80px;
+}
+
+
+/* =========================
+   HOBBY GALLERY
+========================= */
+
+.hobby-gallery {
+    max-width: 1000px;
+
+    margin: 30px auto 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.gallery-card {
+    background: var(--white);
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    position: relative;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+
+    z-index: 1;
+}
+
+.gallery-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(243, 166, 196, 0.25);
+
+    z-index: 20;
+}
+
+.gallery-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================
+   POP UP GAMBAR
+========================= */
+
+.gallery-card:hover img {
+    transform: scale(1.25);
+
+    object-fit: contain;
+
+    background: var(--white);
+
+    box-shadow:
+        0 15px 30px rgba(98, 207, 199, 0.25);
+
+    position: relative;
+
+    z-index: 30;
+}
+
+.gallery-card h3 {
+    color: var(--teal-dark);
+
+    margin-bottom: 5px;
+}
+
+.gallery-card p {
+    color: var(--gray);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-page {
+    padding: 140px 0 80px;
+
+    min-height: 100vh;
+
+    background: var(--background);
+}
+
+.contact-container {
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+}
+
+.contact-info {
+    background: var(--teal-light);
+
+    padding: 35px;
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(98, 207, 199, 0.12);
+}
+
+.contact-info h2 {
+    color: var(--teal-dark);
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--gray);
+
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: var(--pink-light);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+.contact-item h3 {
+    font-size: 16px;
+
+    margin-bottom: 3px;
+
+    color: var(--teal-dark);
+}
+
+.contact-item p {
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+    background: var(--white);
+
+    padding: 35px;
+
+    border:
+        2px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(243, 166, 196, 0.12);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border:
+        1px solid #efc5d6;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: #fffafd;
+
+    color: var(--dark);
+
+    transition:
+        border 0.3s,
+        box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--teal);
+
+    box-shadow:
+        0 0 0 3px rgba(98, 207, 199, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--teal-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    --background: #193d3d;
+
+    --white: #254f4c;
+
+    --teal: #66cfc7;
+
+    --teal-dark: #86ddd5;
+
+    --teal-light: #285957;
+
+    --pink: #d98baa;
+
+    --pink-dark: #efa9c3;
+
+    --pink-light: #5b3b4b;
+
+    --dark: #f5ffff;
+
+    --gray: #d3e5e2;
+
+    --border: #674455;
+}
+
+body.dark-mode nav {
+    background: #173837;
+}
+
+body.dark-mode .hero {
+    background: #285957;
+}
+
+body.dark-mode .hero-content h1 {
+    color: white;
+}
+
+body.dark-mode .hero-description {
+    color: #d3e5e2;
+}
+
+body.dark-mode .hobbies-preview {
+    background: #193d3d;
+}
+
+body.dark-mode .about-page {
+    background: #193d3d;
+}
+
+body.dark-mode .contact-page {
+    background: #193d3d;
+}
+
+body.dark-mode .hobby-card,
+body.dark-mode .hobby-detail,
+body.dark-mode .gallery-card,
+body.dark-mode .contact-form {
+    background: #254f4c;
+
+    border-color: #674455;
+}
+
+body.dark-mode .info-container {
+    background: #285957;
+}
+
+body.dark-mode .info-box {
+    background: #254f4c;
+
+    border-color: #674455;
+}
+
+body.dark-mode .contact-info {
+    background: #285957;
+
+    border-color: #674455;
+}
+
+body.dark-mode .theme-btn {
+    background: #5b3b4b;
+}
+
+body.dark-mode footer {
+    background: #122e2e;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #193d3d;
+
+    color: white;
+
+    border-color: #477773;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav .container {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding-top: 180px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-row {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    .info-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .hobby-detail {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hobby-detail-content {
+        width: 100%;
+    }
+
+    .hobby-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .hobby-detail-image img {
+        height: 230px;
+    }
+}
